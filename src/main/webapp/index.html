@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Watson Demo</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="style.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<script src="index.js"></script>
+</head>
+<body ng-app="pageModule" style="text-align: center; margin-top: 10px;">
+	<div ng-controller="pageCtrl" style='width: 80%;'>
+	<h1>Sample Watson Natural Language Classifier Service</h1>
+		Enter the restaurant mood type you are in:<br/>
+    	<input type="text" id="enterText"  ng-model="enterText" style="width:300px;font-size:1.5em" ng-keypress="classify($event)" />
+    	<br><img src="images/watson_busy_icn.gif" ng-show="watsonthinking" style="background-color:white">
+		<table>
+			<tr ng-repeat="input in userInputs">
+				<td style='width: 95%;'>
+					<p class='description'>Entered<br>{{input.userInput}}</p>
+					<p class='description'>Response<br>{{input.response}}</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
